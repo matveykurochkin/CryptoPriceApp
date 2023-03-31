@@ -1,0 +1,56 @@
+﻿@model CryptoPriceApp.Models.CryptoPriceInformation
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<html>
+<body>
+
+    <div class="CryptoPriceInfo">
+        <div class="InfoCrypto">
+            <span></span>
+            <img src="https://img.icons8.com/fluency/256/bitcoin.png" width="60" height="60" />
+            <div class="wrapper">
+                <p>Bitcoin Price: @Model.bitcoinPrice $</p>
+                @Model.bitcoinChange%
+            </div>
+        </div>
+        <div class="InfoCrypto">
+            <span></span>
+            <img src="https://img.icons8.com/fluency/256/cardano.png" width="60" height="60" />
+            <div class="wrapper">
+                <p>Cardano Price: @Model.cardanoPrice $</p>
+            </div>
+        </div>
+        <div class="InfoCrypto">
+            <span></span>
+            <img src="https://cdn-icons-png.flaticon.com/512/9301/9301018.png" width="60" height="60" />
+            <div class="wrapper">
+                <p>Dogecoin Price: @Model.dogecoinPrice $</p>
+            </div>
+        </div>
+        <div class="InfoCrypto">
+            <span></span>
+            <img src="https://img.icons8.com/fluency/256/ethereum.png" width="60" height="60" />
+            <div class="wrapper">
+                <p>Ethereum Price: @Model.ethereumPrice $</p>
+            </div>
+        </div>
+        <div class="InfoCrypto">
+            <span></span>
+            <img src="https://img.icons8.com/fluency/256/litecoin.png" width="60" height="60" />
+            <div class="wrapper">
+                <p>Litecoin Price: @Model.litecoinPrice $</p>
+            </div>
+        </div>
+        <div class="InfoCrypto">
+            <span></span>
+            <img src="https://img.icons8.com/color/256/tether--v2.png" width="60" height="60" />
+            <div class="wrapper">
+                <p>Tether Price: @Model.tetherPrice $</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
