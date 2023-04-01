@@ -4,13 +4,12 @@
     {
         public int bitcoinPrice;
         public double cardanoPrice, dogecoinPrice, ethereumPrice, litecoinPrice, tetherPrice;
-        public double bitcoinChange;
-        public async Task CryptoPrice()
-        {
-            string url = new ConfigurationBuilder().AddJsonFile("appsettings.json")
+        public double bitcoinChange, cardanoChange, dogecoinChange, ethereumChange, litecoinChange, tetherChange;
+        public string? url = new ConfigurationBuilder().AddJsonFile("appsettings.json")
                                             .Build()
                                             .GetSection("CryptoPriceURL")["cryptoPrice"];
-
+        public async Task CryptoPrice()
+        {
             HttpClient client = new HttpClient();
 
             Root? cryptoPrice = await client.GetFromJsonAsync<Root>(url);
@@ -18,17 +17,22 @@
             if (cryptoPrice is not null)
             {
                 bitcoinPrice = cryptoPrice.bitcoin!.usd;
-                bitcoinChange = cryptoPrice.bitcoin!.usd_24h_change;
+                bitcoinChange = Math.Round(cryptoPrice.bitcoin!.usd_24h_change, 3);
 
-                cardanoPrice = cryptoPrice.cardano!.usd;
+                cardanoPrice = Math.Round(cryptoPrice.cardano!.usd, 4);
+                cardanoChange = Math.Round(cryptoPrice.cardano!.usd_24h_change, 3);
 
-                dogecoinPrice = cryptoPrice.dogecoin!.usd;
+                dogecoinPrice = Math.Round(cryptoPrice.dogecoin!.usd, 4);
+                dogecoinChange = Math.Round(cryptoPrice.dogecoin!.usd_24h_change, 3);
 
-                ethereumPrice = cryptoPrice.ethereum!.usd;
+                ethereumPrice = Math.Round(cryptoPrice.ethereum!.usd, 2);
+                ethereumChange = Math.Round(cryptoPrice.ethereum!.usd_24h_change, 3);
 
-                litecoinPrice = cryptoPrice.litecoin!.usd;
+                litecoinPrice = Math.Round(cryptoPrice.litecoin!.usd, 4);
+                litecoinChange = Math.Round(cryptoPrice.litecoin!.usd_24h_change, 3);
 
-                tetherPrice = cryptoPrice.tether!.usd;
+                tetherPrice = Math.Round(cryptoPrice.tether!.usd, 4);
+                tetherChange = Math.Round(cryptoPrice.tether!.usd_24h_change, 3);
             }
 
         }
