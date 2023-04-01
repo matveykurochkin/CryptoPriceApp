@@ -5,6 +5,8 @@
 html {
     box-sizing: border-box;
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -15,8 +17,8 @@ body {
     margin: 0;
     padding: 0;
     height: inherit;
-    background: linear-gradient(-45deg, #cc95c0, #dbd4b4, #7aa1d2 );
-    background-size: 250% 250%;
+    background: linear-gradient(45deg, #3a1c71, #d76d77, #ffaf7b);
+    background-size: 150% 150%;
     animation: gradient 10s ease infinite;
 }
 
@@ -34,22 +36,64 @@ body {
     }
 }
 
-.CryptoPriceInfo {
-    text-align: center;
+.cryptocurrency .cryptocurrencyName span {
+    color: #aaa;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 6px 0 0 2px;
 }
 
-.InfoCrypto {
-    text-align: center;
-    width: 400px;
-    min-height: 60px;
-    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 25px;
-    background-color: white;
+.cryptocurrency .cryptocurrencyLogo {
+    width: 80px;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    margin-left: 5px;
+}
+
+.cryptocurrency .cryptocurrencyName h3 {
+    color: black;
+    font-size: 26px;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+
+.cryptocurrency .cryptocurrencyName {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.cryptocurrency .cryptocurrencyPrice .change {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: -30px;
+}
+
+.cryptocurrency .cryptocurrencyPrice .price {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: -6px;
+}
+
+.cryptocurrency .cryptocurrencyPrice {
+    display: grid;
+    align-items: center;
+    margin-left: auto;
+    padding: 8px 22px 0 0;
+    text-align: right;
+}
+
+.cryptocurrency {
+    display: flex;
+    width: 420px;
+    height: 80px;
+    border-radius: 14px;
     margin-left: auto;
     margin-right: auto;
-    margin-top:10px;
-}
-
-.wrapper {
-    display: inline-block;
+    margin-top: 10px;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
 }
