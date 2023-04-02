@@ -6,167 +6,176 @@
 
 <html>
 <body>
-    <div class="cryptocurrency">
-        <div class="cryptocurrencyLogo">
-            <img src="https://img.icons8.com/fluency/256/bitcoin.png" width="80" height="80" />
+    @if (Model != null)
+    {
+        <div class="cryptocurrency">
+            <div class="cryptocurrencyLogo">
+                <img src="https://img.icons8.com/fluency/256/bitcoin.png" width="80" height="80" />
+            </div>
+            <div class="cryptocurrencyName">
+                <h3>Bitcoin</h3>
+                <span>/BTC</span>
+            </div>
+            <div class="cryptocurrencyPrice">
+                <span class="price">@Model.bitcoinPrice $</span>
+                <span class="change">
+                    @if (@Model.bitcoinChange > 0)
+                    {
+                        <font color="green">@Model.bitcoinChange %</font>
+                    }
+                    else if (@Model.bitcoinChange < 0)
+                    {
+                        <font color="red">@Model.bitcoinChange %</font>
+                    }
+                    else
+                    {
+                        <font color="#aaa">@Model.bitcoinChange %</font>
+                    }
+                </span>
+            </div>
         </div>
-        <div class="cryptocurrencyName">
-            <h3>Bitcoin</h3>
-            <span>/USD</span>
-        </div>
-        <div class="cryptocurrencyPrice">
-            <span class="price">@Model.bitcoinPrice $</span>
-            <span class="change">
-                @if (@Model.bitcoinChange > 0)
-                {
-                    <font color="green">@Model.bitcoinChange %</font>
-                }
-                else if (@Model.bitcoinChange < 0)
-                {
-                    <font color="red">@Model.bitcoinChange %</font>
-                }
-                else
-                {
-                    <font color="#aaa">@Model.bitcoinChange %</font>
-                }
-            </span>
-        </div>
-    </div>
 
-    <div class="cryptocurrency">
-        <div class="cryptocurrencyLogo">
-            <img src="https://img.icons8.com/fluency/256/cardano.png" width="80" height="80" />
+        <div class="cryptocurrency">
+            <div class="cryptocurrencyLogo">
+                <img src="https://img.icons8.com/fluency/256/cardano.png" width="80" height="80" />
+            </div>
+            <div class="cryptocurrencyName">
+                <h3>Cardano</h3>
+                <span>/ADA</span>
+            </div>
+            <div class="cryptocurrencyPrice">
+                <span class="price">@Model.cardanoPrice $</span>
+                <span class="change">
+                    @if (@Model.cardanoChange > 0)
+                    {
+                        <font color="green">@Model.cardanoChange %</font>
+                    }
+                    else if (@Model.cardanoChange < 0)
+                    {
+                        <font color="red">@Model.cardanoChange %</font>
+                    }
+                    else
+                    {
+                        <font color="#aaa">@Model.cardanoChange %</font>
+                    }
+                </span>
+            </div>
         </div>
-        <div class="cryptocurrencyName">
-            <h3>Cardano</h3>
-            <span>/USD</span>
-        </div>
-        <div class="cryptocurrencyPrice">
-            <span class="price">@Model.cardanoPrice $</span>
-            <span class="change">
-                @if (@Model.cardanoChange > 0)
-                {
-                    <font color="green">@Model.cardanoChange %</font>
-                }
-                else if (@Model.cardanoChange < 0)
-                {
-                    <font color="red">@Model.cardanoChange %</font>
-                }
-                else
-                {
-                    <font color="#aaa">@Model.cardanoChange %</font>
-                }
-            </span>
-        </div>
-    </div>
 
-    <div class="cryptocurrency">
-        <div class="cryptocurrencyLogo">
-            <img src="https://cdn-icons-png.flaticon.com/512/9301/9301018.png" width="80" height="80" />
+        <div class="cryptocurrency">
+            <div class="cryptocurrencyLogo">
+                <img src="https://cdn-icons-png.flaticon.com/512/9301/9301018.png" width="80" height="80" />
+            </div>
+            <div class="cryptocurrencyName">
+                <h3>Dogecoin</h3>
+                <span>/DOGE</span>
+            </div>
+            <div class="cryptocurrencyPrice">
+                <span class="price">@Model.dogecoinPrice $</span>
+                <span class="change">
+                    @if (@Model.dogecoinChange > 0)
+                    {
+                        <font color="green">@Model.dogecoinChange %</font>
+                    }
+                    else if (@Model.dogecoinChange < 0)
+                    {
+                        <font color="red">@Model.dogecoinChange %</font>
+                    }
+                    else
+                    {
+                        <font color="#aaa">@Model.dogecoinChange %</font>
+                    }
+                </span>
+            </div>
         </div>
-        <div class="cryptocurrencyName">
-            <h3>Dogecoin</h3>
-            <span>/USD</span>
-        </div>
-        <div class="cryptocurrencyPrice">
-            <span class="price">@Model.dogecoinPrice $</span>
-            <span class="change">
-                @if (@Model.dogecoinChange > 0)
-                {
-                    <font color="green">@Model.dogecoinChange %</font>
-                }
-                else if (@Model.dogecoinChange < 0)
-                {
-                    <font color="red">@Model.dogecoinChange %</font>
-                }
-                else
-                {
-                    <font color="#aaa">@Model.dogecoinChange %</font>
-                }
-            </span>
-        </div>
-    </div>
 
-    <div class="cryptocurrency">
-        <div class="cryptocurrencyLogo">
-            <img src="https://img.icons8.com/fluency/256/ethereum.png" width="80" height="80" />
+        <div class="cryptocurrency">
+            <div class="cryptocurrencyLogo">
+                <img src="https://img.icons8.com/fluency/256/ethereum.png" width="80" height="80" />
+            </div>
+            <div class="cryptocurrencyName">
+                <h3>Ethereum</h3>
+                <span>/ETH</span>
+            </div>
+            <div class="cryptocurrencyPrice">
+                <span class="price">@Model.ethereumPrice $</span>
+                <span class="change">
+                    @if (@Model.ethereumChange > 0)
+                    {
+                        <font color="green">@Model.ethereumChange %</font>
+                    }
+                    else if (@Model.ethereumChange < 0)
+                    {
+                        <font color="red">@Model.ethereumChange %</font>
+                    }
+                    else
+                    {
+                        <font color="#aaa">@Model.ethereumChange %</font>
+                    }
+                </span>
+            </div>
         </div>
-        <div class="cryptocurrencyName">
-            <h3>Ethereum</h3>
-            <span>/USD</span>
-        </div>
-        <div class="cryptocurrencyPrice">
-            <span class="price">@Model.ethereumPrice $</span>
-            <span class="change">
-                @if (@Model.ethereumChange > 0)
-                {
-                    <font color="green">@Model.ethereumChange %</font>
-                }
-                else if (@Model.ethereumChange < 0)
-                {
-                    <font color="red">@Model.ethereumChange %</font>
-                }
-                else
-                {
-                    <font color="#aaa">@Model.ethereumChange %</font>
-                }
-            </span>
-        </div>
-    </div>
 
-    <div class="cryptocurrency">
-        <div class="cryptocurrencyLogo">
-            <img src="https://img.icons8.com/fluency/256/litecoin.png" width="80" height="80" />
+        <div class="cryptocurrency">
+            <div class="cryptocurrencyLogo">
+                <img src="https://img.icons8.com/fluency/256/litecoin.png" width="80" height="80" />
+            </div>
+            <div class="cryptocurrencyName">
+                <h3>Litecoin</h3>
+                <span>/LTC</span>
+            </div>
+            <div class="cryptocurrencyPrice">
+                <span class="price">@Model.litecoinPrice $</span>
+                <span class="change">
+                    @if (@Model.litecoinChange > 0)
+                    {
+                        <font color="green">@Model.litecoinChange %</font>
+                    }
+                    else if (@Model.litecoinChange < 0)
+                    {
+                        <font color="red">@Model.litecoinChange %</font>
+                    }
+                    else
+                    {
+                        <font color="#aaa">@Model.litecoinChange %</font>
+                    }
+                </span>
+            </div>
         </div>
-        <div class="cryptocurrencyName">
-            <h3>Litecoin</h3>
-            <span>/USD</span>
-        </div>
-        <div class="cryptocurrencyPrice">
-            <span class="price">@Model.litecoinPrice $</span>
-            <span class="change">
-                @if (@Model.litecoinChange > 0)
-                {
-                    <font color="green">@Model.litecoinChange %</font>
-                }
-                else if (@Model.litecoinChange < 0)
-                {
-                    <font color="red">@Model.litecoinChange %</font>
-                }
-                else
-                {
-                    <font color="#aaa">@Model.litecoinChange %</font>
-                }
-            </span>
-        </div>
-    </div>
 
-    <div class="cryptocurrency">
-        <div class="cryptocurrencyLogo">
-            <img src="https://img.icons8.com/color/256/tether--v2.png" width="80" height="80" />
+        <div class="cryptocurrency">
+            <div class="cryptocurrencyLogo">
+                <img src="https://img.icons8.com/color/256/tether--v2.png" width="80" height="80" />
+            </div>
+            <div class="cryptocurrencyName">
+                <h3>Tether</h3>
+                <span>/USDT</span>
+            </div>
+            <div class="cryptocurrencyPrice">
+                <span class="price">@Model.tetherPrice $</span>
+                <span class="change">
+                    @if (@Model.tetherChange > 0)
+                    {
+                        <font color="green">@Model.tetherChange %</font>
+                    }
+                    else if (@Model.tetherChange < 0)
+                    {
+                        <font color="red">@Model.tetherChange %</font>
+                    }
+                    else
+                    {
+                        <font color="#aaa">@Model.tetherChange %</font>
+                    }
+                </span>
+            </div>
         </div>
-        <div class="cryptocurrencyName">
-            <h3>Tether</h3>
-            <span>/USD</span>
+    }
+    else
+    {
+        <div class="error">
+            <img src="https://cdn-icons-png.flaticon.com/512/8129/8129714.png" height="300" width="300" />
         </div>
-        <div class="cryptocurrencyPrice">
-            <span class="price">@Model.tetherPrice $</span>
-            <span class="change">
-                @if (@Model.tetherChange > 0)
-                {
-                    <font color="green">@Model.tetherChange %</font>
-                }
-                else if (@Model.tetherChange < 0)
-                {
-                    <font color="red">@Model.tetherChange %</font>
-                }
-                else
-                {
-                    <font color="#aaa">@Model.tetherChange %</font>
-                }
-            </span>
-        </div>
-    </div>
+    }
 
 </body>
 </html>

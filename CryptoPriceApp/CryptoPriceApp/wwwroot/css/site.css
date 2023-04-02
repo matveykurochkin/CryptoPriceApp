@@ -97,3 +97,7 @@ body {
     background-color: white;
     font-family: 'Montserrat', sans-serif;
 }
+
+.error{
+    text-align:center;
+}
