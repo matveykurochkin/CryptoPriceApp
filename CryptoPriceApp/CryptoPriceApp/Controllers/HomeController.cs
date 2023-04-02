@@ -47,7 +47,7 @@ namespace CryptoPriceApp.Controllers
             }
             finally
             {
-                _logger.LogInformation($"Your URL: {cryptoPriceInformation.url}");
+                _logger.LogInformation($"Your URL: {cryptoPriceInformation.GetURL()}");
             }
         }
 

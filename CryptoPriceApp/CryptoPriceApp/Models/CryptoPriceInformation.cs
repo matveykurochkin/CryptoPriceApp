@@ -5,7 +5,7 @@
         public int bitcoinPrice;
         public double cardanoPrice, dogecoinPrice, ethereumPrice, litecoinPrice, tetherPrice;
         public double bitcoinChange, cardanoChange, dogecoinChange, ethereumChange, litecoinChange, tetherChange;
-        public string? url = new ConfigurationBuilder().AddJsonFile("appsettings.json")
+        protected string? url = new ConfigurationBuilder().AddJsonFile("appsettings.json")
                                             .Build()
                                             .GetSection("CryptoPriceURL")["cryptoPrice"];
         public async Task CryptoPrice()
@@ -34,7 +34,13 @@
                 tetherPrice = Math.Round(cryptoPrice.tether!.usd, 4);
                 tetherChange = Math.Round(cryptoPrice.tether!.usd_24h_change, 3);
             }
+        }
 
+        public string? GetURL()
+        {
+            if (url is not null)
+                return url;
+            return null;
         }
 
     }
