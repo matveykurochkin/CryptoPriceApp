@@ -8,11 +8,11 @@
         protected string? url = new ConfigurationBuilder().AddJsonFile("appsettings.json")
                                             .Build()
                                             .GetSection("CryptoPriceURL")["cryptoPrice"];
+        HttpClient client = new HttpClient();
+        Root? cryptoPrice;
         public async Task CryptoPrice()
         {
-            HttpClient client = new HttpClient();
-
-            Root? cryptoPrice = await client.GetFromJsonAsync<Root>(url);
+             cryptoPrice = await client.GetFromJsonAsync<Root>(url);
 
             if (cryptoPrice is not null)
             {
@@ -42,6 +42,5 @@
                 return url;
             return null;
         }
-
     }
 }

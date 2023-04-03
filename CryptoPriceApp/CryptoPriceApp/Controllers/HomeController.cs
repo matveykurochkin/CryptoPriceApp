@@ -12,10 +12,9 @@ namespace CryptoPriceApp.Controllers
         {
             _logger = logger;
         }
-
+        CryptoPriceInformation cryptoPriceInformation = new CryptoPriceInformation();
         public async Task<IActionResult> Index()
         {
-            CryptoPriceInformation cryptoPriceInformation = new CryptoPriceInformation();
             try
             {
                 await cryptoPriceInformation.CryptoPrice();
@@ -38,16 +37,13 @@ namespace CryptoPriceApp.Controllers
                     $"\tTether:\n" +
                     $"\t\tPrise: {cryptoPriceInformation.tetherPrice} $\n" +
                     $"\t\tChange: {cryptoPriceInformation.tetherChange} %\n");
+                _logger.LogInformation($"Your URL: {cryptoPriceInformation.GetURL()}");
                 return View("Index", cryptoPriceInformation);
             }
             catch (Exception ex)
             {
                 _logger.LogInformation($"Error message: {ex.Message}");
                 return View("Index");
-            }
-            finally
-            {
-                _logger.LogInformation($"Your URL: {cryptoPriceInformation.GetURL()}");
             }
         }
 
