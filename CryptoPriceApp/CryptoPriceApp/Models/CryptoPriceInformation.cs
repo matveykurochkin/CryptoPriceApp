@@ -12,7 +12,7 @@
         Root? cryptoPrice;
         public async Task CryptoPrice()
         {
-             cryptoPrice = await client.GetFromJsonAsync<Root>(url);
+            cryptoPrice = await client.GetFromJsonAsync<Root>(url);
 
             if (cryptoPrice is not null)
             {
