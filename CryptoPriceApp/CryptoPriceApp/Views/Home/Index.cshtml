@@ -169,6 +169,33 @@
                 </span>
             </div>
         </div>
+
+        <div class="cryptocurrency">
+            <div class="cryptocurrencyLogo">
+                <img src="https://img.icons8.com/nolan/256/solana.png" width="80" height="80" />
+            </div>
+            <div class="cryptocurrencyName">
+                <h3>Solana</h3>
+                <span>/SOL</span>
+            </div>
+            <div class="cryptocurrencyPrice">
+                <span class="price">@Model.solanaPrice $</span>
+                <span class="change">
+                    @if (@Model.solanaChange > 0)
+                    {
+                        <font color="green">@Model.solanaChange %</font>
+                    }
+                    else if (@Model.solanaChange < 0)
+                    {
+                        <font color="red">@Model.solanaChange %</font>
+                    }
+                    else
+                    {
+                        <font color="#aaa">@Model.solanaChange %</font>
+                    }
+                </span>
+            </div>
+        </div>
     }
     else
     {
