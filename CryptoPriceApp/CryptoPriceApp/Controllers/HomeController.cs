@@ -36,7 +36,10 @@ namespace CryptoPriceApp.Controllers
                     $"\t\tChange: {cryptoPriceInformation.litecoinChange} %\n" +
                     $"\tTether:\n" +
                     $"\t\tPrise: {cryptoPriceInformation.tetherPrice} $\n" +
-                    $"\t\tChange: {cryptoPriceInformation.tetherChange} %\n");
+                    $"\t\tChange: {cryptoPriceInformation.tetherChange} %\n" +
+                    $"\tSolana:\n" +
+                    $"\t\tPrise: {cryptoPriceInformation.solanaPrice} $\n" +
+                    $"\t\tChange: {cryptoPriceInformation.solanaChange} %\n");
                 _logger.LogInformation($"Your URL: {cryptoPriceInformation.GetURL()}");
                 return View("Index", cryptoPriceInformation);
             }

@@ -3,8 +3,8 @@
     public class CryptoPriceInformation
     {
         public int bitcoinPrice;
-        public double cardanoPrice, dogecoinPrice, ethereumPrice, litecoinPrice, tetherPrice;
-        public double bitcoinChange, cardanoChange, dogecoinChange, ethereumChange, litecoinChange, tetherChange;
+        public double cardanoPrice, dogecoinPrice, ethereumPrice, litecoinPrice, tetherPrice, solanaPrice;
+        public double bitcoinChange, cardanoChange, dogecoinChange, ethereumChange, litecoinChange, tetherChange, solanaChange;
         protected string? url = new ConfigurationBuilder().AddJsonFile("appsettings.json")
                                             .Build()
                                             .GetSection("CryptoPriceURL")["cryptoPrice"];
@@ -33,6 +33,9 @@
 
                 tetherPrice = Math.Round(cryptoPrice.tether!.usd, 4);
                 tetherChange = Math.Round(cryptoPrice.tether!.usd_24h_change, 3);
+
+                solanaPrice = Math.Round(cryptoPrice.solana!.usd, 4);
+                solanaChange = Math.Round(cryptoPrice.solana!.usd_24h_change, 3);
             }
         }
 
