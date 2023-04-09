@@ -46,6 +46,7 @@ namespace CryptoPriceApp.Controllers
             catch (Exception ex)
             {
                 _logger.LogInformation($"Error message: {ex.Message}");
+                ViewData["Error"] = ex.Message;
                 return View("Index");
             }
         }
